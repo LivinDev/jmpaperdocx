@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Culinary Canvas: Painting Your Palate with Flavor!",
+    "title": "jmpaperdocx",
     "description": "At Culinary Canvas, we don,t just serve food, we create edible masterpieces.",
     "lang": "en",
     "charset": "UTF-8",
     "ldJson": {
       "@context": "http://schema.org",
-      "@type": "Restaurant",
-      "name": "Culinary Canvas",
+      "@type": "online project service",
+      "name": "jmpaperdocx",
       "description": "Culinary Canvas is a gastronomic journey where every meal is a work of art. Our chefs are artists, our kitchen their studio, and your plate their canvas. We blend flavors and techniques to create a menu that's a feast for the eyes as much as it is for the palate. At Culinary Canvas, we don't just serve food, we create edible masterpieces.",
       "url": "https://culinarycanvas.com",
       "logo": "https://culinarycanvas.com/logo.svg",
