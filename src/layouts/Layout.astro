@@ -1,51 +1,39 @@
 ---
-interface Props {
-	title: string;
-}
+import "../styles/global.scss";
+import type { Meta } from "@/config/data.interface";
 
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  meta?: Meta;
+}
+import { getLandingData } from "@/services/data.service";
+const data = await getLandingData();
+const { title, meta } = Astro.props;
+const ldJson = JSON.stringify(meta?.ldJson);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset={meta?.charset ?? "UTF-8"} />
+    <meta name="description" content={meta?.description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={import.meta.env.SITE} />
+    <script type="application/ld+json" set:html={ldJson} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body><!-- <script
+  src="https://static.elfsight.com/platform/platform.js"
+  data-use-service-core
+  defer></script>
+<div
+  class="elfsight-app-0039d12e-c31a-423b-86e9-0cb9f02cc449"
+  data-elfsight-app-lazy
+>
+</div> -->
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
