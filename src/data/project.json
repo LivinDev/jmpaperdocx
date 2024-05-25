@@ -49,5 +49,18 @@
         "reviewCount": "276"
       }
     }
+  },
+
+
+  
+  "headerData": {
+    "logo": "Luna Landing",
+    "links": [
+      { "label": "What's New", "href": "#" },
+      { "label": "Services", "href": "#" },
+      { "label": "Contact", "href": "#" },
+      { "label": "About", "href": "#" }
+     
+    ]
   }
 }

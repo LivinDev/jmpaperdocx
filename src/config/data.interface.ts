@@ -1,6 +1,6 @@
 export interface ProjectData {
   meta: Meta;
- 
+  headerData: HeaderData;
 }
 
 export interface Meta {
@@ -25,3 +25,15 @@ export interface LdJson {
   // };
   // sameAs: string[];
 }
+
+export interface HeaderData {
+  logo: string;
+  links: Link[];
+}
+
+
+export interface Link {
+  label: string;
+  href: string;
+}
+

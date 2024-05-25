@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import type { Meta } from "@/config/data.interface";
+import Header from "@/sections/Header.astro";
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
 import { getLandingData } from "@/services/data.service";
 const data = await getLandingData();
 const { title, meta } = Astro.props;
-const ldJson = JSON.stringify(meta?.ldJson);
+// const ldJson = JSON.stringify(meta?.ldJson);
 ---
 
 <!doctype html>
@@ -22,10 +23,11 @@ const ldJson = JSON.stringify(meta?.ldJson);
     <meta name="generator" content={Astro.generator} />
 
     <link rel="canonical" href={import.meta.env.SITE} />
-    <script type="application/ld+json" set:html={ldJson} />
+    <!-- <script type="application/ld+json" set:html={ldJson} /> -->
     <title>{title}</title>
   </head>
   <body>
+    <Header data={data.headerData} />
     <slot />
   </body><!-- <script
   src="https://static.elfsight.com/platform/platform.js"
