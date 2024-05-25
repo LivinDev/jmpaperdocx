@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../assets/hero-image.png";
+import type { HeroData, Link } from "@/config/data.interface";
+
+interface Props {
+  data: HeroData;
+}
+const { data } = Astro.props;
+---
+
+<div class="hero-section">
+  <div class="inner-container">
+    <div class="item-left">
+      <div class="content">
+        <div class="text-view">
+          <h1 class="heading">
+            {data.heading}
+          </h1>
+          <p class="description">
+            {data.description}
+          </p>
+        </div>
+        {
+          data.links.map((item: Link) => (
+            <a class="cta-btn" href={item.href}>
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="item-right">
+      <Image src={HeroImage} alt="" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    background-image: linear-gradient(to top, #2a2a2a 0%, black 100%);
+  }
+  .inner-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 64px;
+    gap: 2rem;
+  }
+  .item-left {
+    flex: 1;
+    color: white;
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .heading {
+      font-size: 50px;
+      line-height: 3.7rem;
+      font-weight: 400;
+      padding-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .description {
+      font-size: 22px;
+      font-weight: 200;
+      color: rgb(201, 201, 201);
+    }
+    .cta-btn {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      color: black;
+      font-weight: 400;
+      width: fit-content;
+      border: 1px solid white;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+      }
+    }
+  }
+  .item-right {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media (max-width: 800px) {
+    .inner-container {
+      height: fit-content;
+      max-width: 100%;
+      flex-direction: column-reverse;
+      padding: 64px 1rem 1rem 1rem;
+    }
+    .item-left {
+      flex: 1;
+      color: white;
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .heading {
+        font-size: 34px;
+        line-height: 2.5rem;
+        font-weight: 300;
+        padding-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+      .description {
+        font-size: 18px;
+        font-weight: 200;
+        color: rgb(201, 201, 201);
+      }
+      .cta-btn {
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: black;
+        font-weight: 400;
+        width: fit-content;
+        border: 1px solid white;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0);
+          color: white;
+        }
+      }
+    }
+  }
+</style>

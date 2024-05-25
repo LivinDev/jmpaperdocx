@@ -1,6 +1,7 @@
 export interface ProjectData {
   meta: Meta;
   headerData: HeaderData;
+  heroData:HeroData;
 }
 
 export interface Meta {
@@ -37,3 +38,8 @@ export interface Link {
   href: string;
 }
 
+export interface HeroData {
+  heading: string,
+  description:string,
+  links:Link[];
+}

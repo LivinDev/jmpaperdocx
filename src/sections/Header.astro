@@ -1,17 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import LogoImage from "../assets/paperdocxlogo.png";
-import type { HeaderData } from "@/config/data.interface";
+import type { HeaderData, Link } from "@/config/data.interface";
 interface Props {
   data: HeaderData;
 }
 
 const { data } = Astro.props;
 console.log(data.links);
-interface Items {
-  label: string;
-  href: string;
-}
 ---
 
 <nav class="navbar">
@@ -24,7 +20,7 @@ interface Items {
     </div>
     <ul class="menu-items">
       {
-        data.links.map((item: Items) => (
+        data.links.map((item: Link) => (
           <li>
             <a href={item.href}>{item.label}</a>
           </li>

@@ -1,9 +1,12 @@
 ---
+import Hero from "@/sections/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLandingData } from "@/services/data.service";
 const data = await getLandingData();
 ---
 
-<Layout title="Paperdocx" meta={data.meta} />
+<Layout title="Paperdocx" meta={data.meta}>
+  <Hero data={data.heroData} />
+</Layout>
 
 <style></style>
