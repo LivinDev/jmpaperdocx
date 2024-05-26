@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import type { Meta } from "@/config/data.interface";
+import Footer from "@/sections/Footer.astro";
 import Header from "@/sections/Header.astro";
 
 interface Props {
@@ -29,13 +30,15 @@ const { title, meta } = Astro.props;
   <body>
     <Header data={data.headerData} />
     <slot />
-  </body><script
-    src="https://static.elfsight.com/platform/platform.js"
-    data-use-service-core
-    defer></script>
-  <div
-    class="elfsight-app-0039d12e-c31a-423b-86e9-0cb9f02cc449"
-    data-elfsight-app-lazy
-  >
-  </div>
+    <Footer />
+    <script
+      src="https://static.elfsight.com/platform/platform.js"
+      data-use-service-core
+      defer></script>
+    <div
+      class="elfsight-app-0039d12e-c31a-423b-86e9-0cb9f02cc449"
+      data-elfsight-app-lazy
+    >
+    </div>
+  </body>
 </html>
