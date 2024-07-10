@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Our Services">
+  <div class="outer-container">
+    <div class="services-container">
+      <div class="service">
+        <img src="https://via.placeholder.com/600x400" alt="Service 1" />
+        <h2>Service 1</h2>
+        <p>
+          Description of Service 1. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+      </div>
+      <div class="service">
+        <img src="https://via.placeholder.com/600x400" alt="Service 2" />
+        <h2>Service 2</h2>
+        <p>
+          Description of Service 2. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+      </div>
+      <div class="service">
+        <img src="https://via.placeholder.com/600x400" alt="Service 3" />
+        <h2>Service 3</h2>
+        <p>
+          Description of Service 3. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .outer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 120px 0;
+  }
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  .service {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+  }
+  .service img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .service h2 {
+    margin-top: 10px;
+    font-size: 1.5em;
+  }
+  .service p {
+    font-size: 1em;
+    color: #333;
+  }
+  @media (max-width: 600px) {
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
+</style>

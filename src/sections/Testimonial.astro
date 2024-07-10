@@ -1,0 +1,50 @@
+---
+// src/components/Testimonial.astro
+const { name, quote, image } = Astro.props;
+---
+
+<div class="testimonial">
+  <img src={image} alt={name} class="testimonial-image" />
+  <div class="testimonial-content">
+    <p class="quote">{quote}</p>
+    <p class="name">{name}</p>
+  </div>
+</div>
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .quote {
+    font-style: italic;
+    color: #333;
+  }
+  .name {
+    font-weight: bold;
+    color: #555;
+  }
+  @media (min-width: 768px) {
+    .testimonial {
+      flex-direction: row;
+      text-align: left;
+    }
+    .testimonial-image {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+</style>

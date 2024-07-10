@@ -2,11 +2,39 @@
 import Hero from "@/sections/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLandingData } from "@/services/data.service";
+import Testimonial from "@/sections/Testimonial.astro";
 const data = await getLandingData();
 ---
 
 <Layout title="Paperdocx" meta={data.meta}>
   <Hero data={data.heroData} />
+  <div class="testimonials">
+    <Testimonial
+      name="John Doe"
+      quote="Amazing service!"
+      image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    />
+    <Testimonial
+      name="John Doe"
+      quote="Amazing service!"
+      image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    />
+    <Testimonial
+      name="Jane Smith"
+      quote="I love their products!"
+      image="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    />
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>

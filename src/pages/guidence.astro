@@ -1,0 +1,75 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<style>
+  .hero {
+    background-color: #0056b3;
+    color: white;
+    padding: 120px 20px;
+
+    text-align: center;
+  }
+  .content {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .degree {
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px);
+    box-sizing: border-box;
+  }
+  .degree i {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 600px) {
+    .degree {
+      width: calc(100% - 40px);
+    }
+  }
+</style>
+<Layout title="guidence">
+  <div class="hero" id="home">
+    <h1>Welcome to Guidance</h1>
+    <p>Your pathway to academic and career success</p>
+  </div>
+  <div class="content" id="degrees">
+    <div class="degree">
+      <i class="fas fa-book"></i>
+      <h3>BA English Literature</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-book"></i>
+      <h3>BA Tamil Literature</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-book"></i>
+      <h3>MA English Literature</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Bachelor of Education (B.Ed) in Tamil</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Bachelor of Education (B.Ed) in English</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-briefcase"></i>
+      <h3>Bachelor of Business Administration (BBA)</h3>
+    </div>
+    <div class="degree">
+      <i class="fas fa-briefcase"></i>
+      <h3>Master of Business Administration (MBA)</h3>
+    </div>
+  </div>
+</Layout>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"
+></script>

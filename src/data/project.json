@@ -54,10 +54,10 @@
   "headerData": {
     "logo": "Luna Landing",
     "links": [
-      { "label": "What's New", "href": "#" },
-      { "label": "Services", "href": "#" },
-      { "label": "Contact", "href": "#" },
-      { "label": "About", "href": "#" }
+      { "label": "Gudience", "href": "/guidence" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Contact", "href": "/contact" },
+      { "label": "About", "href": "/about" }
      
     ]
   },
