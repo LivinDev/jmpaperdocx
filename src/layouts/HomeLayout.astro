@@ -30,13 +30,10 @@ const ldJson = JSON.stringify(meta?.ldJson);
   </head>
   <body>
     <Header data={data.headerData} />
-
     <a class="Whatsapp" href="https://wa.me/9142040934" target="_blank">
       <Image src={WhatsApp} alt="" />
     </a>
-
     <slot />
-    <Footer />
   </body>
 </html>
 
@@ -46,7 +43,7 @@ const ldJson = JSON.stringify(meta?.ldJson);
     bottom: 2rem;
     right: 2rem;
     z-index: 100;
-    height: 70px;
+    height: 80px;
     width: auto;
     overflow: hidden;
 
@@ -58,21 +55,7 @@ const ldJson = JSON.stringify(meta?.ldJson);
   }
   @media (max-width: 800px) {
     .Whatsapp {
-      position: fixed;
-      bottom: 1rem;
-      right: 0;
-      z-index: 100;
-      height: 50px;
-      width: auto;
-      background-color: black;
-      padding: 0.5rem;
-      overflow: hidden;
-
-      img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-      }
+      display: none;
     }
   }
 </style>

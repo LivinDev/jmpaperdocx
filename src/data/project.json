@@ -65,7 +65,7 @@
     "heading":"Lorem ipsum dolor sit am consectetur adipisicing elit.",
     "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita unde quos labore.",
     "links":[
-      {"label":"Contact" , "href":"/contact"}
+      {"label":"Contact Us" , "href":"/contact"}
     ]
   }
 }

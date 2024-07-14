@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import HeroImage from "../assets/hero-image.png";
+import HeroImage from "../assets/heroimage.svg";
 import type { HeroData, Link } from "@/config/data.interface";
 
 interface Props {
@@ -8,6 +8,36 @@ interface Props {
 }
 const { data } = Astro.props;
 ---
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Slide image from right
+    const imageAnimation = gsap.from(".item-right img", {
+      duration: 2,
+      x: "100%",
+      ease: "power3.out",
+      delay: 0.5,
+      onComplete: () => {
+        // Scale image after sliding in
+        gsap.to(".item-right img", {
+          duration: 1,
+          scale: 1.1,
+          ease: "power2.out",
+        });
+      },
+    });
+
+    // Slide heading up from down
+    gsap.from(".content", {
+      duration: 1.5,
+      y: "100%",
+      ease: "power3.out",
+      delay: 0.5,
+    });
+  });
+</script>
 
 <div class="hero-section">
   <div class="inner-container">
@@ -17,9 +47,9 @@ const { data } = Astro.props;
           <h1 class="heading">
             {data.heading}
           </h1>
-          <p class="description">
+          <!-- <p class="description">
             {data.description}
-          </p>
+          </p> -->
         </div>
         {
           data.links.map((item: Link) => (
@@ -38,7 +68,7 @@ const { data } = Astro.props;
 
 <style>
   .hero-section {
-    background-image: linear-gradient(to top, #2a2a2a 0%, black 100%);
+    background-image: white;
   }
   .inner-container {
     max-width: 1300px;
@@ -48,11 +78,12 @@ const { data } = Astro.props;
     align-items: center;
     width: 100%;
     padding-top: 64px;
+    padding: 1rem;
     gap: 2rem;
   }
   .item-left {
     flex: 1;
-    color: white;
+    color: rgb(0, 0, 0);
     .content {
       display: flex;
       flex-direction: column;
@@ -61,28 +92,28 @@ const { data } = Astro.props;
 
     .heading {
       font-size: 50px;
-      line-height: 3.7rem;
-      font-weight: 400;
+      line-height: 3.2rem;
+      font-weight: 600;
       padding-bottom: 1rem;
       letter-spacing: 1px;
     }
     .description {
       font-size: 22px;
       font-weight: 200;
-      color: rgb(201, 201, 201);
+      color: rgb(0, 0, 0);
     }
     .cta-btn {
       text-decoration: none;
       padding: 0.5rem 1rem;
-      background-color: white;
-      color: black;
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
       font-weight: 400;
       width: fit-content;
-      border: 1px solid white;
+      border: 1px solid rgb(0, 0, 0);
       transition: background-color 0.3s ease;
       &:hover {
-        background-color: rgba(0, 0, 0, 0);
-        color: white;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(0, 0, 0);
       }
     }
   }
@@ -99,14 +130,14 @@ const { data } = Astro.props;
   }
   @media (max-width: 800px) {
     .inner-container {
-      height: fit-content;
+      height: 100vh;
       max-width: 100%;
       flex-direction: column-reverse;
       padding: 64px 1rem 1rem 1rem;
     }
     .item-left {
       flex: 1;
-      color: white;
+      color: rgb(0, 0, 0);
       .content {
         display: flex;
         flex-direction: column;
@@ -123,20 +154,20 @@ const { data } = Astro.props;
       .description {
         font-size: 18px;
         font-weight: 200;
-        color: rgb(201, 201, 201);
+        color: rgb(0, 0, 0);
       }
       .cta-btn {
         text-decoration: none;
         padding: 0.5rem 1rem;
-        background-color: white;
-        color: black;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         font-weight: 400;
         width: fit-content;
-        border: 1px solid white;
+        border: 1px solid rgb(0, 0, 0);
         transition: background-color 0.3s ease;
         &:hover {
-          background-color: rgba(0, 0, 0, 0);
-          color: white;
+          background-color: rgba(255, 255, 255, 0);
+          color: rgb(0, 0, 0);
         }
       }
     }

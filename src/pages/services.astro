@@ -1,32 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Vediting from "../assets/video-editing.jpg";
+import Gdesign from "../assets/graphic-des.jpg";
+import WebDesign from "../assets/web-design.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Our Services">
   <div class="outer-container">
+    <div class="hero" id="home">
+      <h1>Welcome to Guidance</h1>
+      <p>Your pathway to academic and career success</p>
+    </div>
     <div class="services-container">
       <div class="service">
-        <img src="https://via.placeholder.com/600x400" alt="Service 1" />
-        <h2>Service 1</h2>
+        <Image src={Vediting} alt="Service 1" class="service-image" />
+        <h2>Professional Graphic Design</h2>
         <p>
-          Description of Service 1. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+          Transform your ideas into visually stunning designs with our expert
+          graphic design services. From logos to marketing materials, we bring
+          your brand to life.
         </p>
       </div>
       <div class="service">
-        <img src="https://via.placeholder.com/600x400" alt="Service 2" />
-        <h2>Service 2</h2>
+        <Image src={Gdesign} alt="Service 2" class="service-image" />
+        <h2>Expert Video Editing</h2>
         <p>
-          Description of Service 2. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+          Enhance your videos with professional editing services. Whether for
+          marketing, social media, or personal projects, our editors create
+          captivating and polished videos.
         </p>
       </div>
       <div class="service">
-        <img src="https://via.placeholder.com/600x400" alt="Service 3" />
-        <h2>Service 3</h2>
+        <Image src={WebDesign} alt="Service 3" class="service-image" />
+        <h2>Custom Web Development</h2>
         <p>
-          Description of Service 3. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+          Build a powerful online presence with our custom web development
+          solutions. We design and develop websites that are responsive,
+          user-friendly, and tailored to your needs
         </p>
       </div>
     </div>
@@ -37,7 +48,7 @@ import Layout from "../layouts/Layout.astro";
   .outer-container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 0;
+    padding: 1rem;
   }
   .services-container {
     display: grid;
@@ -46,16 +57,27 @@ import Layout from "../layouts/Layout.astro";
     padding: 20px;
     font-family: Arial, sans-serif;
   }
+  .hero {
+    background-color: #2a2763;
+
+    color: #ffffff;
+    padding: 120px 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 3.5rem;
+  }
   .service {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
     background-color: #fff;
   }
-  .service img {
+  .service-image {
     width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
     border-radius: 8px;
   }
   .service h2 {
