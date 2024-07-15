@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "jmpaperdocx",
-    "description": "At Culinary Canvas, we don,t just serve food, we create edible masterpieces.",
+    "title": "Rheni",
+    "description": "Learn, Design and create with us",
     "lang": "en",
     "charset": "UTF-8",
     "ldJson": {
       "@context": "http://schema.org",
       "@type": "online project service",
-      "name": "jmpaperdocx",
+      "name": "Rheni",
       "description": "Culinary Canvas is a gastronomic journey where every meal is a work of art. Our chefs are artists, our kitchen their studio, and your plate their canvas. We blend flavors and techniques to create a menu that's a feast for the eyes as much as it is for the palate. At Culinary Canvas, we don't just serve food, we create edible masterpieces.",
-      "url": "https://culinarycanvas.com",
+      "url": "https://rheni.in",
       "logo": "https://culinarycanvas.com/logo.svg",
       "image": "https://culinarycanvas.com/restaurant.jpg",
-      "telephone": "+91 9142040934",
+      "telephone": "+91 8903340674",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "123 Canvas St",
@@ -40,9 +40,8 @@
           "closes": "23:00"
         }
       ],
-      "servesCuisine": ["Italian", "French", "Contemporary"],
-      "priceRange": "$$",
-      "hasMenu": "https://culinarycanvas.com/menu",
+    
+ 
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.5",
@@ -54,7 +53,7 @@
   "headerData": {
     "logo": "Luna Landing",
     "links": [
-      { "label": "Gudience", "href": "/guidence" },
+      { "label": "Guidance", "href": "/guidence" },
       { "label": "Services", "href": "/services" },
       { "label": "Contact", "href": "/contact" },
       { "label": "About", "href": "/about" }
@@ -62,7 +61,7 @@
     ]
   },
   "heroData":{
-    "heading":"Lorem ipsum dolor sit am consectetur adipisicing elit.",
+    "heading":"Learn, Design and create with us",
     "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita unde quos labore.",
     "links":[
       {"label":"Contact Us" , "href":"/contact"}
