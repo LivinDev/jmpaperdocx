@@ -1,25 +1,25 @@
 {
   "meta": {
     "title": "Rheni",
-    "description": "Learn, Design and create with us",
+    "description": " Your Digital Assistant",
     "lang": "en",
     "charset": "UTF-8",
     "ldJson": {
       "@context": "http://schema.org",
       "@type": "online project service",
       "name": "Rheni",
-      "description": "Culinary Canvas is a gastronomic journey where every meal is a work of art. Our chefs are artists, our kitchen their studio, and your plate their canvas. We blend flavors and techniques to create a menu that's a feast for the eyes as much as it is for the palate. At Culinary Canvas, we don't just serve food, we create edible masterpieces.",
+      "description": "Your Digital Assistant",
       "url": "https://rheni.in",
       "logo": "https://culinarycanvas.com/logo.svg",
       "image": "https://culinarycanvas.com/restaurant.jpg",
       "telephone": "+91 8903340674",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Canvas St",
-        "addressLocality": "Art City",
-        "addressRegion": "Paint State",
-        "postalCode": "12345",
-        "addressCountry": "USA"
+        "streetAddress": "RC Church Street, Rajapogalaperi,",
+        "addressLocality": "Veerakeralamputhur,",
+        "addressRegion": "Tirunelveli",
+        "postalCode": "12627861345",
+        "addressCountry": "India"
       },
       "geo": {
         "@type": "GeoCoordinates",
@@ -61,7 +61,7 @@
     ]
   },
   "heroData":{
-    "heading":"Learn, Design and create with us",
+    "heading":"Your Digital Assistant",
     "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita unde quos labore.",
     "links":[
       {"label":"Contact Us" , "href":"/contact"}
