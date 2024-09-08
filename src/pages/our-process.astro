@@ -1,0 +1,162 @@
+---
+import "../styles/global.scss";
+
+import ServiceCard from "../components/ServiceCard.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="rheni-our-process">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Empowering Your Success</h1>
+        <p>
+          We guide individuals and organizations towards realizing their visions
+          and achieving breakthrough success.
+        </p>
+        <a href="#services" class="cta-button">Explore Our Services</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>What You Get</h2>
+        <div class="service-grid">
+          <ServiceCard
+            title="Project Title Selection"
+            description="We handle the entire process of title selection for your final year project, ensuring it aligns perfectly with your academic field of study."
+          />
+          <ServiceCard
+            title="Theory Application"
+            description="We manage the application of theoretical frameworks throughout your research, ensuring that the chosen theories enhance the validity and significance of your project title."
+          />
+          <ServiceCard
+            title="Formatting"
+            description="We handle all aspects of formatting your thesis, from structuring your document to applying the latest edition, consistent styles, and ensuring all elements meet academic guidelines."
+          />
+          <ServiceCard
+            title="Plagiarism-Free Content"
+            description="Our contents are purely plagiarism-free. We diligently cite sources, employ paraphrasing techniques, and use plagiarism detection tools to ensure work remains authentic and trustworthy."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="platform">
+      <div class="container">
+        <h2>Our Platform</h2>
+        <p>
+          Our platform is dedicated to helping students, individuals, and
+          organizations harness their full potential. Through a blend of
+          innovative strategies and transformative coaching, we unlock hidden
+          possibilities and pave the way for remarkable achievements.
+        </p>
+        <a href="#contact" class="cta-button">Start Your Journey</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* General Styles */
+  body {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h1,
+  h2 {
+    font-weight: bold;
+    color: #333;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: #fff;
+  }
+
+  .hero p {
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  /* Services Section */
+  .services {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  /* About Section */
+  .about {
+    padding: 80px 0;
+    background-color: #fff;
+  }
+
+  /* Platform Section */
+  .platform {
+    padding: 80px 0;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    text-align: center;
+  }
+
+  .platform p {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+</style>

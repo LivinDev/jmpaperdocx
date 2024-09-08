@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+
+const { imgSrc, reverse, background } = Astro.props;
+---
+
+<style define:vars={{ customBackground: background }}>
+  .outer-container {
+    background: var(
+      --customBackground,
+      linear-gradient(
+        34deg,
+        rgb(184, 159, 227) 0%,
+        rgb(207, 210, 251) 21%,
+        rgb(251, 233, 230) 94%,
+        rgb(255, 255, 255) 100%
+      )
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 2rem 0;
+  }
+  .container {
+    display: flex;
+    max-width: 1330px;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  .left-content {
+    flex: 1;
+  }
+  .right-content {
+    flex: 1;
+  }
+  .image-section {
+    width: 100%;
+    max-width: 500px; /* or whatever maximum width you prefer */
+    margin: 0 auto;
+  }
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .reverse {
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column-reverse;
+      width: 100%;
+      gap: 1rem;
+    }
+    .image-section {
+      max-width: 100%;
+    }
+    .outer-container {
+      padding: 2rem 0;
+    }
+    .reverse {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<div class="outer-container">
+  <div class:list={["container", reverse && "reverse"]}>
+    <div class="left-content">
+      <slot />
+    </div>
+    <div class="right-content">
+      <div class="image-section">
+        <Image
+          src={imgSrc}
+          alt="Descriptive alt text"
+          class="responsive-image"
+          width={500}
+          height={500}
+        />
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,11 +4,46 @@ import Layout from "../layouts/Layout.astro";
 import { getLandingData } from "@/services/data.service";
 import Testimonial from "@/sections/Testimonial.astro";
 import HomeLayout from "@/layouts/HomeLayout.astro";
+import CustomCta from "@/components/CustomCta.astro";
+import Image from "../assets/cart-fly.png";
+import CustomCard from "@/components/CustomCard.astro";
 const data = await getLandingData();
 ---
 
 <HomeLayout title="Rheni" meta={data.meta}>
   <Hero data={data.heroData} />
+  <CustomCard
+    reverse
+    background="radial-gradient(circle, rgba(211,204,227,1) 0%, rgba(233,228,240,1) 53%)"
+    imgSrc={Image}
+  >
+    <div class="left-content">
+      <div class="text-section">
+        <p class="title-1">Who We are</p>
+        <p class="sub-heading">
+          At Rheni, we go beyond just final year projects. We specialize in
+          graphic design and web development, providing innovative solutions to
+          meet your visual and digital needs. Our dedication to quality is at
+          the heart of everything we do.
+        </p>
+        <a class="cta-btn" href="/our-process">See How We Do</a>
+      </div>
+    </div>
+  </CustomCard>
+  <Testimonial />
+  <CustomCta
+    title="Start your 30-day free trial"
+    subtitle="Join over 4,000+ startups already growing with Untitled."
+    learnMoreText="Learn more"
+    getStartedText="Get started"
+    learnMoreHref="#"
+    getStartedHref="#"
+    primaryButtonColor="#FF0000"
+    primaryButtonTextColor="white"
+    backgroundColor="#FFDC7F"
+    titleColor="black"
+    subtitleColor="#333"
+  />
 </HomeLayout>
 
 <style>
@@ -20,5 +55,21 @@ const data = await getLandingData();
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .title-1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .sub-heading {
+    margin-bottom: 1.5rem;
+  }
+  .cta-btn {
+    background-color: black;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    text-decoration: none;
   }
 </style>

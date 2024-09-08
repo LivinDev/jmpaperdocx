@@ -1,119 +1,229 @@
 ---
+import CustomCard from "../components/CustomCard.astro";
+
 import Layout from "../layouts/Layout.astro";
-import Vediting from "../assets/video-editing.jpg";
-import Gdesign from "../assets/graphic-des.jpg";
-import WebDesign from "../assets/web-design.jpg";
-import Typewriting from "../assets/typwriting.jpg";
-import Msword from "../assets/msword.svg";
-import { Image } from "astro:assets";
+import Image from "../assets/cart-fly.png";
+
+import Hero from "@/sections/Hero.astro";
+import { getLandingData } from "@/services/data.service";
+import Testimonial from "@/sections/Testimonial.astro";
+import CustomCta from "@/components/CustomCta.astro";
+import CustomHero from "@/components/CustomHero.astro";
+const data = await getLandingData();
 ---
 
-<Layout title="Our Services">
-  <div class="outer-container">
-    <div class="hero" id="home">
-      <h1>Welcome to Guidance</h1>
-      <p>Your pathway to academic and career success</p>
-    </div>
-    <div class="services-container">
-      <div class="service">
-        <Image src={Vediting} alt="Service 1" class="service-image" />
-        <h2>Professional Graphic Design</h2>
-        <p>
-          Transform your ideas into visually stunning designs with our expert
-          graphic design services. From logos to marketing materials, we bring
-          your brand to life.
+<Layout title="Clothing-rental">
+  <CustomHero
+    topText="Premium Service We Offer"
+    heading="Convert your unknown prospects."
+    description="Recognize and remarket to unknown visitors and personalize their experiences for better conversion."
+    imgSrc={Image}
+  />
+
+  <CustomCard
+    reverse
+    background="radial-gradient(circle, rgba(211,204,227,1) 0%, rgba(233,228,240,1) 53%)"
+    imgSrc={Image}
+  >
+    <div class="left-content">
+      <div class="text-section">
+        <p class="title-1">
+          Change the way you run your fashion and clothing rental.
         </p>
-      </div>
-      <div class="service">
-        <Image src={Gdesign} alt="Service 2" class="service-image" />
-        <h2>Expert Video Editing</h2>
-        <p>
-          Enhance your videos with professional editing services. Whether for
-          marketing, social media, or personal projects, our editors create
-          captivating and polished videos.
-        </p>
-      </div>
-      <div class="service">
-        <Image src={WebDesign} alt="Service 3" class="service-image" />
-        <h2>Custom Web Development</h2>
-        <p>
-          Build a powerful online presence with our custom web development
-          solutions. We design and develop websites that are responsive,
-          user-friendly, and tailored to your needs
-        </p>
-      </div>
-      <div class="service">
-        <Image src={Typewriting} alt="Service 3" class="service-image" />
-        <h2>Multi-Language Typing Services</h2>
-        <p>
-          Offering typing services in Hindi, Tamil, and English. Get accurate
-          and efficient text transcription for all your documents. Contact us
-          for professional and timely typing solutions.
-        </p>
-      </div>
-      <div class="service">
-        <Image src={Msword} alt="Service 3" class="service-image" />
-        <h2>Comprehensive MS Word Services</h2>
-        <p>
-          Offering expert Microsoft Office services, including PowerPoint
-          presentations, Excel data analysis, and Word document creation.
-          Enhance your productivity with professional and efficient solutions
-          tailored to your needs. Contact us for reliable and high-quality
-          support.
+        <p class="sub-heading">
+          Rentablez you can automate and optimize every aspect of your rental
+          business while having access to an intuitive platform.
         </p>
       </div>
     </div>
-  </div>
+  </CustomCard>
+
+  <CustomCard background="#fffff" imgSrc={Image}>
+    <div class="left-content">
+      <div class="text-section-ps">
+        <div class="badge-style">Your Problem</div>
+        <p class="title-ps">Inventory Chaos</p>
+        <p class="sub-heading-ps">
+          Manually keeping track of your clothes can result in mishandling,
+          misplaced parts, and unrecorded rentals, all of which can cost you
+          money
+        </p>
+      </div>
+      <div class="text-section-ps">
+        <div class="badge-style">Our Solution</div>
+        <p class="title-ps">Real-Time Inventory Tracking</p>
+        <p class="sub-heading-ps">
+          To prevent overscheduling or misplacing, keep track of what is
+          available, rented, and in need of maintenance or cleaning.
+        </p>
+      </div>
+    </div>
+  </CustomCard>
+  <CustomCard reverse background="#D5BEAC" imgSrc={Image}>
+    <div class="left-content">
+      <div class="text-section-ps">
+        <div class="badge-style">Your Problem</div>
+        <p class="title-ps">Time-consuming Bookings</p>
+        <p class="sub-heading-ps">
+          It can be tiresome and prone to error to spend hours handling
+          reservations over the phone, through emails, and on spreadsheets.
+        </p>
+      </div>
+      <div class="text-section-ps">
+        <div class="badge-style">Our Solution</div>
+        <p class="title-ps">Easy Booking Process</p>
+        <p class="sub-heading-ps">
+          To ensure that you never miss a rental, automate the booking process,
+          minimize manual errors, and synchronize bookings with your calendar.
+        </p>
+      </div>
+    </div>
+  </CustomCard>
+  <CustomCard background="#ffffff" imgSrc={Image}>
+    <div class="left-content">
+      <div class="text-section-ps">
+        <div class="badge-style">Your Problem</div>
+        <p class="title-ps">Missed Growth Opportunities</p>
+        <p class="sub-heading-ps">
+          It may seem impossible to scale your company, improve customer
+          service, or optimize inventory without insights.
+        </p>
+      </div>
+      <div class="text-section-ps">
+        <div class="badge-style">Our Solution</div>
+        <p class="title-ps">Data-Driven Insights</p>
+        <p class="sub-heading-ps">
+          Make use of extensive analytics to comprehend consumer preferences,
+          business performance, and stock optimization based on demand patterns.
+        </p>
+      </div>
+    </div>
+  </CustomCard>
+
+  <CustomCta
+    title="Start your 30-day free trial"
+    subtitle="Join over 4,000+ startups already growing with Untitled."
+    learnMoreText="Learn more"
+    getStartedText="Get started"
+    learnMoreHref="#"
+    getStartedHref="#"
+    primaryButtonColor="#FF0000"
+    primaryButtonTextColor="white"
+    backgroundColor="#FFDC7F"
+    titleColor="black"
+    subtitleColor="#333"
+  />
 </Layout>
 
 <style>
-  .outer-container {
-    max-width: 1300px;
-    margin: 0 auto;
+  .content {
+    max-width: 1330px;
     padding: 1rem;
-  }
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  .hero {
-    background-color: #2a2763;
-
-    color: #ffffff;
-    padding: 120px 20px;
-    text-align: center;
-    border-radius: 20px;
-    margin-top: 3.5rem;
-  }
-  .service {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    background-color: #fff;
-  }
-  .service-image {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 8px;
   }
-  .service h2 {
-    margin-top: 10px;
-    font-size: 1.5em;
+  .main-title {
+    font-size: 2.8rem;
+    color: white;
+    font-weight: bold;
+    max-width: 650px;
+    margin-bottom: 1rem;
   }
-  .service p {
-    font-size: 1em;
-    color: #333;
+  .left-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
   }
-  @media (max-width: 600px) {
-    .services-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  .text-section-ps {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    min-height: 250px;
+  }
+  .main-description {
+    font-size: 1.2rem;
+    color: rgb(46, 46, 46);
+    font-weight: 400;
+    max-width: 650px;
+    line-height: 1.5rem;
+  }
+  .sub-heading {
+    font-size: 1.1rem;
+    color: #595959;
+    font-weight: 400;
+  }
+  .title-1 {
+    font-size: 2rem;
+    color: rgb(53, 53, 53);
+    line-height: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .sub-heading-ps {
+    font-size: 0.8rem;
+    color: #595959;
+    font-weight: 400;
+    line-height: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  .title-ps {
+    font-size: 1.2rem;
+    color: rgb(53, 53, 53);
+    line-height: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+  .demo {
+    margin-top: 1.3rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px solid white;
+    &:hover {
+      background-color: #ffc600;
+      color: rgb(0, 0, 0);
+    }
+  }
+  .badge-style {
+    width: fit-content;
+    padding: 0.3rem 0.5rem;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2rem;
+    }
+    .main-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .main-title {
+      font-size: 1.5rem;
+    }
+    .main-description {
+      font-size: 0.9rem;
+    }
+    .left-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 1.5rem;
     }
   }
 </style>

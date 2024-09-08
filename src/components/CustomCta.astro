@@ -1,0 +1,98 @@
+---
+// FreeTrialCTA.astro
+
+interface Props {
+  title: string;
+  subtitle: string;
+  learnMoreText: string;
+  getStartedText: string;
+  learnMoreHref: string;
+  getStartedHref: string;
+  backgroundColor?: string;
+  titleColor?: string;
+  subtitleColor?: string;
+  primaryButtonColor?: string;
+  primaryButtonTextColor?: string;
+  secondaryButtonColor?: string;
+  secondaryButtonTextColor?: string;
+}
+
+const {
+  title,
+  subtitle,
+  learnMoreText,
+  getStartedText,
+  learnMoreHref,
+  getStartedHref,
+  backgroundColor = "white",
+  titleColor = "#000",
+  subtitleColor = "#666",
+  primaryButtonColor = "#6200ee",
+  primaryButtonTextColor = "white",
+  secondaryButtonColor = "white",
+  secondaryButtonTextColor = "#333",
+} = Astro.props;
+---
+
+<section class="free-trial-cta" style={`background-color: ${backgroundColor};`}>
+  <h2 style={`color: ${titleColor};`}>{title}</h2>
+  <p style={`color: ${subtitleColor};`}>{subtitle}</p>
+  <div class="button-container">
+    <a
+      href={learnMoreHref}
+      class="button button-secondary"
+      style={`background-color: ${secondaryButtonColor}; color: ${secondaryButtonTextColor};`}
+    >
+      {learnMoreText}
+    </a>
+    <a
+      href={getStartedHref}
+      class="button button-primary"
+      style={`background-color: ${primaryButtonColor}; color: ${primaryButtonTextColor};`}
+    >
+      {getStartedText}
+    </a>
+  </div>
+</section>
+
+<style>
+  .free-trial-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .button {
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-secondary {
+    border: 1px solid #ccc;
+  }
+
+  .button-secondary:hover,
+  .button-primary:hover {
+    opacity: 0.8;
+  }
+</style>

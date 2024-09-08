@@ -1,50 +1,213 @@
 ---
-// src/components/Testimonial.astro
-const { name, quote, image } = Astro.props;
+// TestimonialSlider.astro
 ---
 
-<div class="testimonial">
-  <img src={image} alt={name} class="testimonial-image" />
-  <div class="testimonial-content">
-    <p class="quote">{quote}</p>
-    <p class="name">{name}</p>
+<div class="outer-container">
+  <div class="testimonial-slider">
+    <div class="slider-container">
+      <div class="slide">
+        <div class="card">
+          <p>"This product changed my life! Highly recommended."</p>
+          <div class="author">
+            <img src="https://via.placeholder.com/50" alt="John Doe" />
+            <span>John Doe</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <p>"Exceptional quality and service. Will definitely buy again."</p>
+          <div class="author">
+            <img src="https://via.placeholder.com/50" alt="Jane Smith" />
+            <span>Jane Smith</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <p>"Incredible value for money. Exceeded my expectations."</p>
+          <div class="author">
+            <img src="https://via.placeholder.com/50" alt="Bob Johnson" />
+            <span>Bob Johnson</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <p>"The customer support is top-notch. Very satisfied!"</p>
+          <div class="author">
+            <img src="https://via.placeholder.com/50" alt="Alice Brown" />
+            <span>Alice Brown</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <p>"I've tried many products, but this one stands out."</p>
+          <div class="author">
+            <img src="https://via.placeholder.com/50" alt="Charlie Davis" />
+            <span>Charlie Davis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="prev-btn" aria-label="Previous testimonial">&lt;</button>
+    <button class="next-btn" aria-label="Next testimonial">&gt;</button>
   </div>
 </div>
 
 <style>
-  .testimonial {
+  .outer-container {
+    background-color: #f5f7fa;
+    padding: 2rem 0;
+  }
+
+  .testimonial-slider {
+    position: relative;
+    max-width: 1330px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    transition: transform 0.3s ease;
   }
-  .testimonial-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+
+  .card:hover {
+    transform: translateY(-5px);
   }
-  .quote {
-    font-style: italic;
+
+  .card p {
+    font-size: 18px;
+    line-height: 1.6;
     color: #333;
+    margin-bottom: 20px;
+    flex-grow: 1;
   }
-  .name {
+
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .author span {
     font-weight: bold;
     color: #555;
   }
+
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+
+  .prev-btn:hover,
+  .next-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+
   @media (min-width: 768px) {
-    .testimonial {
-      flex-direction: row;
-      text-align: left;
+    .slide {
+      flex: 0 0 33.333%;
     }
-    .testimonial-image {
-      margin-right: 20px;
-      margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .card p {
+      font-size: 16px;
+    }
+
+    .prev-btn,
+    .next-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
     }
   }
 </style>
+
+<script is:inline>
+  const sliderContainer = document.querySelector(".slider-container");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  let currentIndex = 0;
+  let slidesPerView = 1;
+
+  function updateSlidesPerView() {
+    slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+    showSlide(currentIndex);
+  }
+
+  function showSlide(index) {
+    const totalSlides = slides.length;
+    if (index < 0) {
+      currentIndex = totalSlides - slidesPerView;
+    } else if (index > totalSlides - slidesPerView) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+
+    const offset = -currentIndex * (100 / slidesPerView);
+    sliderContainer.style.transform = `translateX(${offset}%)`;
+  }
+
+  prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
+  nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+
+  window.addEventListener("resize", updateSlidesPerView);
+  updateSlidesPerView();
+
+  // Optional: Auto-play
+  setInterval(() => showSlide(currentIndex + 1), 5000);
+</script>

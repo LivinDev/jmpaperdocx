@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import HeroImage from "../assets/heroimage.svg";
+import HeroImage from "../assets/cart-fly.png";
 import type { HeroData, Link } from "@/config/data.interface";
 
 interface Props {
@@ -47,9 +47,9 @@ const { data } = Astro.props;
           <h1 class="heading">
             {data.heading}
           </h1>
-          <!-- <p class="description">
+          <p class="description">
             {data.description}
-          </p> -->
+          </p>
         </div>
         {
           data.links.map((item: Link) => (
